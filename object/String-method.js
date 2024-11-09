@@ -14,3 +14,5 @@ let isValid = function (password1) {
 console.log(isValid("dskdhhdh233"));
 console.log(isValid("gdfkh"));
 console.log(isValid("hjhsjdhjsjdhj"));
+
+console.log("hello world");
