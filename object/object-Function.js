@@ -55,5 +55,4 @@ let studentDetails = function (stu) {
 };
 let stuDetails = studentDetails(student);
 console.log(stuDetails);
-let nextstuDetails = studentDetails(nextStudent);
-console.log(nextstuDetails);
+console.log(studentDetails(nextStudent));
