@@ -21,5 +21,6 @@ const gradeCalc = function (obtained, total) {
   } else return (grade = "F");
 };
 const data = gradeCalc(15, 20);
+const nextdata = gradeCalc(18, 20);
 console.log(data);
-console.log(data);
+console.log(nextdata);
