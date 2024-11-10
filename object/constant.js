@@ -22,3 +22,4 @@ const gradeCalc = function (obtained, total) {
 };
 const data = gradeCalc(15, 20);
 console.log(data);
+console.log("done");
