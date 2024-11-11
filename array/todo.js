@@ -1,7 +1,17 @@
 const todo = ["Exercise", "Code", "Video Game", "Appointment", "Movie"];
-// Delete the 3rd item
-// add a new onto the end
-// remove th first item from the list
+todo.forEach(function(value, num){
+    console.log(`${num+1}. ${value}`);
+    // if (num == 1 || num == 2){
+    //     console.log(`${num}. ${value}`);
+    // }
+})
+
+
+
+// // Delete the 3rd item
+// // add a new onto the end
+// // remove th first item from the list
+console.log('\n');
 console.log(todo.splice(2, 1));
 console.log(todo);
 todo.push("Buy food");

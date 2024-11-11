@@ -1,7 +1,14 @@
 const notes = ["note 1", "note 2", "note 3"]; // we can as many as we want // not needed to be of same data type
+notes.forEach(function(item, index){
+    console.log(`the index is ${index} & item is ${item}`);
+})
+
+
+console.log('\n');
 console.log(notes);
 console.log(notes.length); // remember length is property so no () //// index start at 0;
 
+// methods
 notes.push("added note");   // push add value at the end
 console.log(notes);
 console.log(notes.length);
