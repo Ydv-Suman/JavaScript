@@ -1,4 +1,4 @@
-const notes = ["note 1", "note 2", "note 3"]; // we can as many as we want // not needed to be of same data type/
+//const notes = ["note 1", "note 2", "note 3"]; // we can as many as we want // not needed to be of same data type/
 
 // console.log('\n');
 // console.log(notes);
@@ -40,7 +40,7 @@ const notes = ["note 1", "note 2", "note 3"]; // we can as many as we want // no
 
 
 //console.log(notes.indexOf('note 1'));  // -1 if not found in array
-
+// console.log('\n);
 
 const newNote = [{
     topic: 'call',
@@ -52,9 +52,20 @@ const newNote = [{
     topic: 'read',
     descp: 'book'
 }]
-const index = newNote.findIndex(function(note, num){
-    console.log(note);  // stops immediately it find the index 
-    return note.topic === 'call';
-    // return note.descp === 'exercise';
-})
-console.log(index);
+const findnewNote = function(newNote, noteTopic){
+    const index = newNote.findIndex(function(note, num){
+        return note.topic.toLowerCase() == noteTopic.toLowerCase();
+    })
+    return newNote[index]; 
+}
+const value = findnewNote(newNote, "Read");
+console.log(value);
+
+
+
+// const index = newNote.findIndex(function(note, num){
+//     console.log(note);  // stops immediately it find the index 
+//     return note.topic === 'call';
+//     // return note.descp === 'exercise';
+// })
+// console.log(index);
