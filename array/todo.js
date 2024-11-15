@@ -48,14 +48,29 @@ const newTodo = [{
     status: 'completed'
 }];
 
-const deleteTodo = function(newTodo, status){
-    const index = newTodo.findIndex(function(newTodo){
-        return newTodo.status.toLowerCase() === status.toLowerCase();
+
+// findIndex method
+// const deleteTodo = function(todo, text){
+//     const index = todo.findIndex(function(notes){
+//         //return isTitleMatch = notes.title.toLowerCase().includes(text.toLowerCase());
+//         return isStatusMatch = notes.status.toLowerCase().includes(text.toLowerCase());
+//         //return isTitleMatch || isStatusMatch;
+//     })
+//     if (index > -1){
+//         todo.splice(index, 1);
+//     }
+//     return todo;
+// }
+// const given = deleteTodo(newTodo, 'Completed');
+// console.log(given);
+
+// filter method
+const deleteTodos = function(todo, statuses){
+    const findWords = todo.filter(function(todos){
+        return todos.status.toLowerCase() !== statuses.toLowerCase();
     })
-    if (index > -1){
-        newTodo.splice(index, 1);
-    }
-    return newTodo;
+    return findWords;
 }
-const given = deleteTodo(newTodo, 'Completed');
-console.log(given);
+
+const word = deleteTodos(newTodo, 'completed');
+console.log(word);

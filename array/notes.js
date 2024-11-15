@@ -52,14 +52,29 @@ const newNote = [{
     topic: 'read',
     descp: 'book'
 }]
-const findnewNote = function(newNote, noteTopic){
-    const index = newNote.findIndex(function(note, num){
-        return note.topic.toLowerCase() == noteTopic.toLowerCase();
+
+const filterNotes = function(note, text){
+    const filterNote = note.filter(function(notes, index){
+        const isTopicMatch = notes.topic.toLowerCase().includes(text.toLowerCase());
+        const isDescpMatch = notes.descp.toLowerCase().includes(text.toLowerCase());
+        return isTopicMatch || isDescpMatch;
+        //return false;           // false will return empty array
     })
-    return newNote[index]; 
+    return filterNote;
 }
-const value = findnewNote(newNote, "Read");
-console.log(value);
+let match = filterNotes(newNote, 'call');
+console.log(match);
+
+
+
+// const findnewNote = function(newNote, noteTopic){
+//     const index = newNote.findIndex(function(note, num){
+//         return note.topic.toLowerCase() == noteTopic.toLowerCase();
+//     })
+//     return newNote[index]; 
+// }
+// const value = findnewNote(newNote, "Read");
+// console.log(value);
 
 
 
