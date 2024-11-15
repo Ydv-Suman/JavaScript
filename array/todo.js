@@ -64,7 +64,9 @@ const newTodo = [{
 // const given = deleteTodo(newTodo, 'Completed');
 // console.log(given);
 
+
 // filter method
+// delete matched one
 const deleteTodos = function(todo, statuses){
     const findWords = todo.filter(function(todos){
         return todos.status.toLowerCase() !== statuses.toLowerCase();
@@ -74,3 +76,4 @@ const deleteTodos = function(todo, statuses){
 
 const word = deleteTodos(newTodo, 'completed');
 console.log(word);
+console.log('hawa word');
