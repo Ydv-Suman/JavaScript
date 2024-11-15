@@ -23,7 +23,7 @@ const expenseTracker = {
         this.income.forEach(function(income){
             totalIncome += income.incomeAmount
         })
-        return `${this.name} has income of $${totalIncome} and has spent ${totalExpenses}.\nNow, ${this.name} has${totalIncome - totalExpenses}.`
+        return `${this.name} has income of $${totalIncome} and has spent ${totalExpenses}.\nNow, ${this.name} has a balance of ${totalIncome - totalExpenses}.`
     }
 }
 
