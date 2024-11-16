@@ -7,7 +7,7 @@
 
 const todo = [{
     title: 'Exercise',
-    completed: true
+    completed: false
 },{
     title: 'code',
     completed: false
@@ -18,6 +18,8 @@ const todo = [{
     title: 'Appointment',
     completed: true
 }];
+
+//shows how many todos left to be completed
 let count = 0
 todo.forEach(function(todos){
     if (!todos.completed)
@@ -26,3 +28,13 @@ todo.forEach(function(todos){
 const addHead = document.createElement('h2')
 addHead.textContent = `There are ${count} todos left to be completed.`
 document.querySelector('body').appendChild(addHead)
+
+//add a p for each todo above
+todo.forEach(function(todos){
+    if (!todos.completed){
+        const notCompleted = todos.title
+        const addParagraph = document.createElement('p')
+        addParagraph.textContent = notCompleted
+        document.querySelector('body').appendChild(addParagraph)
+    }
+})
