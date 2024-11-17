@@ -26,8 +26,29 @@ const note = [{
 // addParagraph.textContent = 'This a update using JS'
 // document.querySelector('body').appendChild(addParagraph)
 
-// accessing the button
 
-document.querySelector('button').addEventListener('click', function(){
-    console.log('working')
+// // accessing the button
+// // if only one button
+// document.querySelector('button').addEventListener('click', function(e){
+//     e.target.textContent = 'Add'
+// })
+
+// // provide index to target specific button
+// // otherwise it will only access the first button
+// document.querySelectorAll('button')[1].addEventListener('click', function(e){
+//     e.target.textContent = 'Remove'
+// })
+
+// alternate method
+// # for id
+document.querySelector('#create-note').addEventListener('click', function(e){
+    e.target.textContent = 'Add'
+})
+
+document.querySelector('#remove-all').addEventListener('click', function(){
+    // . is used for class
+    document.querySelectorAll('.note').forEach(function(note){
+        note.remove()
+    })
+    //e.target.textContent = 'Remove'
 })

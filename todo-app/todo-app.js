@@ -38,3 +38,14 @@ todo.forEach(function(todos){
         document.querySelector('body').appendChild(addParagraph)
     }
 })
+
+document.querySelector('#add-button').addEventListener('click', function(e){
+    e.target.textContent = 'added'
+})
+
+document.querySelector('#remove-button').addEventListener('click', function(e){
+    document.querySelectorAll('.p').forEach(function(todo){
+        todo.remove()
+    })
+    e.target.textContent = 'removed'
+})
