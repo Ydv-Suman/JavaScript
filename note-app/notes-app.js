@@ -71,4 +71,5 @@ document.querySelector('#input-text').addEventListener('input', function(e){
     filtersNote.searchText = e.target.value
     renderNote(notes, filtersNote)
 })
+
 console.log('hawa')
