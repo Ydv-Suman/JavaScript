@@ -39,13 +39,21 @@ todo.forEach(function(todos){
     }
 })
 
+// using id to access the tag
+// # is used for id
 document.querySelector('#add-button').addEventListener('click', function(e){
     e.target.textContent = 'added'
 })
 
 document.querySelector('#remove-button').addEventListener('click', function(e){
+    // using class
+    // . used for class
     document.querySelectorAll('.p').forEach(function(todo){
         todo.remove()
     })
     e.target.textContent = 'removed'
+})
+
+document.querySelector('#addItem').addEventListener('input', function(e){
+    console.log(e.target.value)
 })

@@ -1,4 +1,4 @@
-const note = [{
+const notes = [{
     topic: 'call',
     descp: 'friend'
 },{
@@ -41,14 +41,33 @@ const note = [{
 
 // alternate method
 // # for id
-document.querySelector('#create-note').addEventListener('click', function(e){
-    e.target.textContent = 'Add'
-})
 
-document.querySelector('#remove-all').addEventListener('click', function(){
-    // . is used for class
-    document.querySelectorAll('.note').forEach(function(note){
-        note.remove()
+const filtersNote = {
+    searchText: ''
+
+}
+const renderNote = function(note, filtersNote){
+    const filteredNote = notes.filtersNote(function(notes){
+        return notes.topic.toLowerCase().includes(filtersNote.searchText.toLowerCase())
     })
-    //e.target.textContent = 'Remove'
+    console.log(filteredNote)
+}
+renderNote(notes, filtersNote)
+
+// document.querySelector('#create-note').addEventListener('click', function(e){
+//     filtersNote.searchText = e.target.value
+//     renderNote(note, filtersNote)
+// })
+
+// document.querySelector('#remove-all').addEventListener('click', function(){
+//     // . is used for class
+//     document.querySelectorAll('.note').forEach(function(note){
+//         note.remove()
+//      })
+//     //e.target.textContent = 'Remove'
+// })
+
+document.querySelector('#input-text').addEventListener('input', function(e){
+    filtersNote.searchText = e.target.value
+    renderNote(notes, filtersNote)
 })
