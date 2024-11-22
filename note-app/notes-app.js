@@ -74,6 +74,10 @@ document.querySelector("#form").addEventListener('submit', function(e){
     e.target.elements.firstName.value =''
 })
 
+document.querySelector('#label').addEventListener('change',function(e){
+    console.log(e.target.checked)
+})
+
 
 
 // document.querySelector('#create-note').addEventListener('click', function(e){
