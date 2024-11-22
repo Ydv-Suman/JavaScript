@@ -50,10 +50,15 @@ const renderNote = function(notes,filters){
     const filteredNotes =notes.filter(function(note){ 
         return note.topic.toLowerCase().includes(filters.searchText.toLowerCase())
     })
+    
+    // Clearing notes before we add something
+    // innerHTML allows to set new HTML value
+    document.querySelector('#notes').innerHTML = ''
+
     filteredNotes.forEach(function(notes){
         const noteElt = document.createElement('p')
         noteElt.textContent = notes.topic
-        document.querySelector('body').appendChild(noteElt)
+        document.querySelector('#notes').appendChild(noteElt)
     })
 }
 renderNote(notes, filters)
