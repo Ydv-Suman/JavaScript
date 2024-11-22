@@ -8,8 +8,12 @@
         <h1>Welcome!</h1>
         <h2>Note App</h2>
         <input id="input-text" type="text" placeholder="Filter Notes">
+        <select id="sort-by">
+            <option value="byEdited">last Edited</option>
+            <option value="byCreated">recently created</option>
+            <option value="alphabetical">alphabetical</option>
+        </select>
         <div id="notes">
-
         </div>
         <form id="form">
             <input type ="text" placeholder="First Name" name="firstName">
@@ -18,7 +22,6 @@
         <label id="label">
             <input type="checkbox"> Check me some for fun
         </label>
-
         <script src="notes-app.js"></script>
     </body>
 </html>
