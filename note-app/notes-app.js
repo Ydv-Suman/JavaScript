@@ -68,6 +68,12 @@ document.querySelector('#input-text').addEventListener('input', function(e){
     renderNote(notes, filters)
 })
 
+document.querySelector("#form").addEventListener('submit', function(e){
+    e.preventDefault()
+    console.log(e.target.elements.firstName.value)
+    e.target.elements.firstName.value =''
+})
+
 
 
 // document.querySelector('#create-note').addEventListener('click', function(e){

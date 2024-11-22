@@ -69,6 +69,22 @@ document.querySelector('#inputTodo').addEventListener('input', function(e){
     console.log(e.target.value)
 })
 
+// create a form with a signle input for todo text
+// setup a submit handler an d cancel the default action
+// add a new item to the todos array with that text data (completed value of false)
+// Rerender the application
+// clear the input field value
+
+document.querySelector('#form').addEventListener('submit', function(e){
+    e.preventDefault()
+    todo.push({
+        title: e.target.elements.enterTodo.value,
+        completed: false
+    })
+    renderTodos(todo, filters)
+    e.target.elements.enterTodo.value = ''
+})
+
 
 
 // //shows how many todos left to be completed
