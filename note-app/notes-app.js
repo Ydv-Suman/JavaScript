@@ -42,17 +42,28 @@ const notes = [{
 // alternate method
 // # for id
 
-const filtersNote = {
+const filters = { // creating object to store data
     searchText: ''
-
 }
-const renderNote = function(note, filtersNote){
-    const filteredNote = notes.filtersNote(function(notes){
-        return notes.topic.toLowerCase().includes(filtersNote.searchText.toLowerCase())
+const renderNote = function(notes,filters){
+    //limit thee notes to just those that passes the filter
+    const filteredNotes =notes.filter(function(note){ 
+        return note.topic.toLowerCase().includes(filters.searchText.toLowerCase())
     })
-    console.log(filteredNote)
+    filteredNotes.forEach(function(notes){
+        const noteElt = document.createElement('p')
+        noteElt.textContent = notes.topic
+        document.querySelector('body').appendChild(noteElt)
+    })
 }
-renderNote(notes, filtersNote)
+renderNote(notes, filters)
+document.querySelector('#input-text').addEventListener('input', function(e){
+    // when search value is change, it update the filters and call the function again
+    filters.searchText = e.target.value
+    renderNote(notes, filters)
+})
+
+
 
 // document.querySelector('#create-note').addEventListener('click', function(e){
 //     filtersNote.searchText = e.target.value
@@ -66,10 +77,3 @@ renderNote(notes, filtersNote)
 //      })
 //     //e.target.textContent = 'Remove'
 // })
-
-document.querySelector('#input-text').addEventListener('input', function(e){
-    filtersNote.searchText = e.target.value
-    renderNote(notes, filtersNote)
-})
-
-console.log('hawa')
